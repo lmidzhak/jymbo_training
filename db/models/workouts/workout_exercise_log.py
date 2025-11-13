@@ -7,8 +7,8 @@ class WorkoutExerciseLog(Base, TimestampMixin):
     __tablename__ = "workout_exercise_logs"
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
-    session_id: Mapped[int] = mapped_column(ForeignKey("gym.workout_sessions.id"), nullable=False)
-    exercise_id: Mapped[int] = mapped_column(ForeignKey("gym.exercises.id"), nullable=False)
+    session_id: Mapped[int] = mapped_column(ForeignKey("workout_sessions.id"), nullable=False)
+    exercise_id: Mapped[int] = mapped_column(ForeignKey("exercises.id"), nullable=False)
     sets: Mapped[int] = mapped_column(Integer, nullable=False, default=3)
     reps: Mapped[int] = mapped_column(Integer, nullable=False, default=10)
     weight: Mapped[float | None] = mapped_column(Float, nullable=True)

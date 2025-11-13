@@ -4,7 +4,6 @@ from sqlalchemy import BigInteger
 
 class Base(DeclarativeBase):
     __abstract__ = True
-    __table_args__ = {"schema": "gym"}
 
 
 class TimestampMixin:

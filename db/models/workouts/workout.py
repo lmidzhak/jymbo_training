@@ -7,7 +7,7 @@ class WorkoutSession(Base, TimestampMixin):
     __tablename__ = "workout_sessions"
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
-    user_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("gym.users.id"), nullable=False)
+    user_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("users.id"), nullable=False)
     date: Mapped[int] = mapped_column(BigInteger, nullable=False)
     duration_minutes: Mapped[int | None] = mapped_column(Float, nullable=True)
     weight_before: Mapped[float | None] = mapped_column(Float, nullable=True)

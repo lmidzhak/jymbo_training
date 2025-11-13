@@ -11,10 +11,10 @@ class Exercise(Base, TimestampMixin):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(100), unique=True)
     muscle_group: Mapped[MuscleGroup] = mapped_column(
-        Enum(MuscleGroup, name="muscle_group_enum", schema="gym"), nullable=False
+        Enum(MuscleGroup, name="muscle_group_enum"), nullable=False
     )
     equipment: Mapped[EquipmentType] = mapped_column(
-        Enum(EquipmentType, name="equipment_enum", schema="gym"),
+        Enum(EquipmentType, name="equipment_enum"),
         nullable=False,
         default=EquipmentType.NONE
     )
